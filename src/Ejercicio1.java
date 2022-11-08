@@ -10,7 +10,7 @@ public class Ejercicio1 {
             opcion = scanner.nextLine();
             ejecutarOpcion(opcion);
         }
-        while (!opcion.equals("Despedirme"));
+        while (!opcion.equals("Despedirse"));
     }
 
     static void imprimirMenu() {
@@ -26,23 +26,20 @@ public class Ejercicio1 {
     static void ejecutarOpcion(String opcion) {
         switch (opcion) {
             case "Saludarme":
-                System.out.println("Hola, como estas?");
-                System.out.println("\n");
+                System.out.println("Hola, como estas?\n");
                 break;
 
             case "Hora":
-                System.out.println("“Ok, te diré la hora”");
-                System.out.println("\n");
+                System.out.println("Ok, te diré la hora\n");
+
                 break;
 
             case "Comida":
-                System.out.println("“Es hora de comer!”");
-                System.out.println("\n");
+                System.out.println("Es hora de comer!\n");
                 break;
 
             case "Despedirse":
-                System.out.println("“Adios”");
-                System.out.println("\n");
+                System.out.println("Adios\n");
                 break;
 
             default:

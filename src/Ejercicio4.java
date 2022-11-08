@@ -11,13 +11,19 @@ public class Ejercicio4 {
         var mapPrecio = crearMapPrecio(lista);
         var mapStock = crearMapStock(lista);
         String opcion;
+
         var scanner = new Scanner(System.in);
         do {
             imprimirKeysMayusculas(mapStock);
+
             System.out.print("Ingrese Key: ");
+
             opcion = scanner.nextLine();
+
             final var precio = mapPrecio.get(opcion);
+
             final var stock = mapStock.get(opcion);
+            
             if (mapStock.containsKey(opcion)) {
                 var mensaje = String.format("El item %s tiene un precio de %.2f y su stock es de %d unidades.", opcion, precio, stock);
                 System.out.println(mensaje);

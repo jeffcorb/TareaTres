@@ -7,19 +7,18 @@ public class Ejercicio3 {
         crearList();
         var scanner = new Scanner(System.in);
         int index;
-        do {
-            imprimirLista(crearList());
-            System.out.print("Ingrese Index: ");
-            index = scanner.nextInt();
-            if (index < 4 && index >= 0) {
-                System.out.println(crearList().get(index));
-                System.out.println("\n");
-            } else {
-                System.out.println("Index no existe");
-                System.out.println("\n");
+        try {
+            do {
+                imprimirLista(crearList());
+                System.out.print("Ingrese Index: ");
+                index = scanner.nextInt();
             }
+            while (index != -1);
+
+        } catch (ExcepcionRango e) {
+            System.out.println("Index no existe\n");
         }
-        while (index != -1);
+
     }
 
     static ArrayList crearList() {
@@ -35,7 +34,19 @@ public class Ejercicio3 {
 
     static void imprimirLista(List<String> list) {
         for (var i : list) {
-            System.out.println(list.indexOf(i) + "  " + i);
+            System.out.printf(list.indexOf(i) + "  " + i);
+        }
+    }
+
+    public void validarRango(int num) throws ExcepcionRango {
+        if ((num > 4) || (num < 0)) {
+            throw new ExcepcionRango("Index no existe\n");
+        }
+    }
+
+    public class ExcepcionRango extends Exception {
+        public ExcepcionRango(String msj_error) {
+            super(msj_error);
         }
     }
 }
