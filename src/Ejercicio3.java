@@ -4,21 +4,24 @@ import java.util.Scanner;
 
 public class Ejercicio3 {
     public static void main(String[] args) {
-        crearList();
+
         var scanner = new Scanner(System.in);
-        int index;
-        try {
-            do {
+        var index = 0;
+
+        do {
+            try {
+                var lista = crearList();
                 imprimirLista(crearList());
-                System.out.print("Ingrese Index: ");
+                System.out.println("\n Ingrese Index: ");
                 index = scanner.nextInt();
+                lista.get(index);
+                
+            } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
+                System.out.println("Index no existe\n");
             }
-            while (index != -1);
-
-        } catch (ExcepcionRango e) {
-            System.out.println("Index no existe\n");
         }
-
+        while (index != -1);
+        scanner.close();
     }
 
     static ArrayList crearList() {
@@ -34,19 +37,7 @@ public class Ejercicio3 {
 
     static void imprimirLista(List<String> list) {
         for (var i : list) {
-            System.out.printf(list.indexOf(i) + "  " + i);
-        }
-    }
-
-    public void validarRango(int num) throws ExcepcionRango {
-        if ((num > 4) || (num < 0)) {
-            throw new ExcepcionRango("Index no existe\n");
-        }
-    }
-
-    public class ExcepcionRango extends Exception {
-        public ExcepcionRango(String msj_error) {
-            super(msj_error);
+            System.out.printf(i + " ");
         }
     }
 }

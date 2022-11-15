@@ -22,6 +22,7 @@ public class Ejercicio2 {
             }
         }
         while (opcion != -1);
+        scanner.close();
     }
 
     static Map<Integer, String> crearMap() {

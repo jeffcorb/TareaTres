@@ -23,13 +23,14 @@ public class Ejercicio4 {
             final var precio = mapPrecio.get(opcion);
 
             final var stock = mapStock.get(opcion);
-            
+
             if (mapStock.containsKey(opcion)) {
                 var mensaje = String.format("El item %s tiene un precio de %.2f y su stock es de %d unidades.", opcion, precio, stock);
                 System.out.println(mensaje);
             }
         }
         while (mapStock.containsKey(opcion));
+        scanner.close();
     }
 
     static List<String> CrearLista() {

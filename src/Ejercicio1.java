@@ -8,9 +8,11 @@ public class Ejercicio1 {
             imprimirMenu();
             System.out.print("Ingrese Opcion: ");
             opcion = scanner.nextLine();
+
             ejecutarOpcion(opcion);
         }
         while (!opcion.equals("Despedirse"));
+        scanner.close();
     }
 
     static void imprimirMenu() {
