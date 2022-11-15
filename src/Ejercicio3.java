@@ -9,13 +9,12 @@ public class Ejercicio3 {
         var index = 0;
 
         do {
+            var lista = crearList();
+            imprimirLista(crearList());
+            System.out.println("\n Ingrese Index: ");
+            index = scanner.nextInt();
             try {
-                var lista = crearList();
-                imprimirLista(crearList());
-                System.out.println("\n Ingrese Index: ");
-                index = scanner.nextInt();
                 lista.get(index);
-                
             } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
                 System.out.println("Index no existe\n");
             }
